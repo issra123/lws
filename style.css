@@ -1471,7 +1471,25 @@ nav {
 }
 
 
+.phone-row {
+    display: grid;
+    grid-template-columns: 135px 1fr;
+    gap: 10px;
+}
 
+.phone-row select,
+.phone-row input {
+    width: 100%;
+    min-width: 0;
+}
+
+@media(max-width: 480px) {
+
+    .phone-row {
+        grid-template-columns: 115px 1fr;
+    }
+
+}
 /* =================================
    SCHEDULE CARD
 ================================= */
