@@ -6,15 +6,11 @@
 
 /* ==========================================
    SETTINGS
-
-   THESE ARE THE MAIN THINGS YOU CHANGE.
 ========================================== */
 
 
 /*
 YOUR WHATSAPP NUMBER
-
-Use international format.
 
 Example:
 +961 70 123 456
@@ -27,19 +23,17 @@ NO +
 NO spaces
 */
 
-
 const smartyWhatsAppNumber = "961XXXXXXXX";
 
 
 /*
 YOUR GOOGLE CALENDAR BOOKING LINK
 
-When you create your Google Calendar
-Appointment Schedule, paste the link here.
+When ready, paste your real Google Calendar
+appointment link here.
 
 For now leave "#".
 */
-
 
 const smartyCalendarLink = "#";
 
@@ -49,12 +43,10 @@ const smartyCalendarLink = "#";
    LEARNING PATH ANIMATION
 ========================================== */
 
-
 window.addEventListener("load", function () {
 
     const pathFill =
         document.getElementById("pathFill");
-
 
     if (pathFill) {
 
@@ -70,10 +62,8 @@ window.addEventListener("load", function () {
    MOBILE NAVIGATION
 ========================================== */
 
-
 const menuBtn =
     document.getElementById("menuBtn");
-
 
 const navLinks =
     document.getElementById("navLinks");
@@ -81,34 +71,25 @@ const navLinks =
 
 if (menuBtn && navLinks) {
 
-
     menuBtn.addEventListener(
         "click",
         function () {
 
-
             const menuIsOpen =
-                navLinks.classList.contains(
-                    "mobile-open"
-                );
-
+                navLinks.classList.contains("mobile-open");
 
             if (menuIsOpen) {
 
                 closeMobileMenu();
 
-            }
-
-            else {
+            } else {
 
                 openMobileMenu();
 
             }
 
-
         }
     );
-
 
 
     const links =
@@ -117,14 +98,11 @@ if (menuBtn && navLinks) {
 
     links.forEach(function (link) {
 
-
         link.addEventListener(
             "click",
             function () {
 
-                if (
-                    window.innerWidth < 860
-                ) {
+                if (window.innerWidth < 860) {
 
                     closeMobileMenu();
 
@@ -133,87 +111,57 @@ if (menuBtn && navLinks) {
             }
         );
 
-
     });
 
 }
 
 
-/*
-OPEN MOBILE MENU
-*/
 
+/* ==========================================
+   OPEN MOBILE MENU
+========================================== */
 
 function openMobileMenu() {
 
+    navLinks.classList.add("mobile-open");
 
-    navLinks.classList.add(
-        "mobile-open"
-    );
+    navLinks.style.display = "flex";
 
+    navLinks.style.flexDirection = "column";
 
-    navLinks.style.display =
-        "flex";
+    navLinks.style.position = "absolute";
 
+    navLinks.style.top = "79px";
 
-    navLinks.style.flexDirection =
-        "column";
+    navLinks.style.left = "0";
 
+    navLinks.style.right = "0";
 
-    navLinks.style.position =
-        "absolute";
+    navLinks.style.background = "#FFFFFF";
 
-
-    navLinks.style.top =
-        "79px";
-
-
-    navLinks.style.left =
-        "0";
-
-
-    navLinks.style.right =
-        "0";
-
-
-    navLinks.style.background =
-        "#FFFFFF";
-
-
-    navLinks.style.padding =
-        "20px 24px";
-
+    navLinks.style.padding = "20px 24px";
 
     navLinks.style.borderBottom =
         "1px solid #DCE3FA";
 
-
     navLinks.style.boxShadow =
         "0 8px 24px rgba(16,27,77,.08)";
 
-
-    navLinks.style.gap =
-        "16px";
+    navLinks.style.gap = "16px";
 
 }
 
 
-/*
-CLOSE MOBILE MENU
-*/
 
+/* ==========================================
+   CLOSE MOBILE MENU
+========================================== */
 
 function closeMobileMenu() {
 
+    navLinks.classList.remove("mobile-open");
 
-    navLinks.classList.remove(
-        "mobile-open"
-    );
-
-
-    navLinks.removeAttribute(
-        "style"
-    );
+    navLinks.removeAttribute("style");
 
 }
 
@@ -221,33 +169,22 @@ function closeMobileMenu() {
 
 /* ==========================================
    HANDLE SCREEN RESIZE
-
-   This prevents the navigation from
-   disappearing after moving between
-   mobile and desktop sizes.
 ========================================== */
-
 
 window.addEventListener(
     "resize",
     function () {
 
-
         if (
-            window.innerWidth >= 860
+            window.innerWidth >= 860 &&
+            navLinks
         ) {
 
-            navLinks.classList.remove(
-                "mobile-open"
-            );
+            navLinks.classList.remove("mobile-open");
 
-
-            navLinks.removeAttribute(
-                "style"
-            );
+            navLinks.removeAttribute("style");
 
         }
-
 
     }
 );
@@ -258,29 +195,19 @@ window.addEventListener(
    FLOATING WHATSAPP BUTTON
 ========================================== */
 
-
 const whatsappButton =
-    document.getElementById(
-        "whatsappButton"
-    );
+    document.getElementById("whatsappButton");
 
 
 if (whatsappButton) {
 
-
     const message =
-
         "Hi! I'd like to know more about Learn with Smarty.";
 
-
     whatsappButton.href =
-
         "https://wa.me/" +
-
         smartyWhatsAppNumber +
-
         "?text=" +
-
         encodeURIComponent(message);
 
 }
@@ -288,71 +215,40 @@ if (whatsappButton) {
 
 
 /* ==========================================
-   CONTACT FORM
-
-   The form sends the information through
-   WhatsApp.
-
-   No backend or Formspree needed yet.
+   CONTACT FORM -> WHATSAPP
 ========================================== */
 
-
 const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
+    document.getElementById("contactForm");
 
 
 if (contactForm) {
-
 
     contactForm.addEventListener(
         "submit",
         function (event) {
 
-
             event.preventDefault();
 
 
-
             const parentName =
-
-                document.getElementById(
-                    "parentName"
-                ).value;
-
+                document.getElementById("parentName").value.trim();
 
 
             const childName =
-
-                document.getElementById(
-                    "childName"
-                ).value;
-
+                document.getElementById("childName").value.trim();
 
 
             const email =
-
-                document.getElementById(
-                    "email"
-                ).value;
-
+                document.getElementById("email").value.trim();
 
 
             const phone =
-
-                document.getElementById(
-                    "phone"
-                ).value;
-
+                document.getElementById("phone").value.trim();
 
 
             const subjectInterest =
-
-                document.getElementById(
-                    "subjectInterest"
-                ).value;
-
+                document.getElementById("subjectInterest").value;
 
 
             const message =
@@ -373,7 +269,7 @@ if (contactForm) {
                 email +
                 "\n" +
 
-                "Phone: " +
+                "Phone / WhatsApp: " +
                 phone +
                 "\n" +
 
@@ -381,26 +277,18 @@ if (contactForm) {
                 subjectInterest;
 
 
-
             const whatsappURL =
 
                 "https://wa.me/" +
-
                 smartyWhatsAppNumber +
-
                 "?text=" +
-
-                encodeURIComponent(
-                    message
-                );
-
+                encodeURIComponent(message);
 
 
             window.open(
                 whatsappURL,
                 "_blank"
             );
-
 
         }
     );
@@ -413,62 +301,153 @@ if (contactForm) {
    CALENDAR BUTTON
 ========================================== */
 
-
 const calendarButton =
-    document.getElementById(
-        "calendarButton"
-    );
+    document.getElementById("calendarButton");
 
 
 if (calendarButton) {
-
 
     calendarButton.addEventListener(
         "click",
         function (event) {
 
-
-            /*
-            CALENDAR NOT SET YET
-            */
+            event.preventDefault();
 
 
             if (
+                !smartyCalendarLink ||
                 smartyCalendarLink === "#"
             ) {
 
-
-                event.preventDefault();
-
-
                 alert(
-
                     "Online demo scheduling is coming soon. Please contact us on WhatsApp to arrange your demo."
-
                 );
-
 
                 return;
 
             }
 
 
-
-            /*
-            CALENDAR READY
-            */
-
-
-            event.preventDefault();
-
-
             window.open(
                 smartyCalendarLink,
-                "_blank"
+                "_blank",
+                "noopener"
             );
-
 
         }
     );
 
 }
+
+
+
+/* ==========================================
+   MOBILE PROGRAMS - SHOW MORE / SHOW LESS
+========================================== */
+
+const programsToggle =
+    document.getElementById("programsToggle");
+
+const programsGrid =
+    document.querySelector(".prog-grid");
+
+
+if (programsToggle && programsGrid) {
+
+    programsToggle.addEventListener(
+        "click",
+        function () {
+
+            programsGrid.classList.toggle("show-all");
+
+
+            const isOpen =
+                programsGrid.classList.contains("show-all");
+
+
+            if (isOpen) {
+
+                programsToggle.textContent =
+                    "Show Fewer Programs ↑";
+
+            } else {
+
+                programsToggle.textContent =
+                    "Show More Programs ↓";
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* ==========================================
+   RESET PROGRAMS WHEN RETURNING TO DESKTOP
+========================================== */
+
+window.addEventListener(
+    "resize",
+    function () {
+
+        if (
+            window.innerWidth > 640 &&
+            programsGrid
+        ) {
+
+            programsGrid.classList.remove("show-all");
+
+
+            if (programsToggle) {
+
+                programsToggle.textContent =
+                    "Show More Programs ↓";
+
+            }
+
+        }
+
+    }
+);
+
+
+
+/* ==========================================
+   FAQ
+
+   Keep only one FAQ open at a time.
+========================================== */
+
+const faqItems =
+    document.querySelectorAll(".faq-item");
+
+
+faqItems.forEach(function (item) {
+
+    item.addEventListener(
+        "toggle",
+        function () {
+
+            if (!item.open) {
+                return;
+            }
+
+
+            faqItems.forEach(
+                function (otherItem) {
+
+                    if (otherItem !== item) {
+
+                        otherItem.removeAttribute("open");
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+});
