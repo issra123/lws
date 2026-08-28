@@ -1735,96 +1735,62 @@ Available in Arabic and English.
 
 
 
-                <form class="book-form"
-                      id="contactForm">
+               <form class="book-form"
+      id="contactForm">
 
+    <input type="text"
+           id="studentName"
+           placeholder="Learner's name"
+           required>
 
-                    <input type="text"
-                           id="parentName"
-                           placeholder="Parent / contact name"
-                           required>
+    <input type="number"
+           id="studentAge"
+           placeholder="Age"
+           min="7"
+           max="25"
+           required>
 
+    <input type="text"
+           id="parentName"
+           placeholder="Parent / contact name (optional)">
 
-                    <input type="text"
-                           id="childName"
-                           placeholder="Learner's name & age"
-                           required>
+    <input type="email"
+           id="email"
+           placeholder="Email address"
+           required>
 
+    <input type="tel"
+           id="phone"
+           placeholder="Phone / WhatsApp number"
+           required>
 
-                    <input type="email"
-                           id="email"
-                           placeholder="Email address"
-                           required>
+    <select id="subjectInterest"
+            required>
 
+        <option value=""
+                disabled
+                selected>
+            What are they interested in?
+        </option>
 
-                    <input type="tel"
-                           id="phone"
-                           placeholder="Phone / WhatsApp number"
-                           required>
+        <option>Coding & Games</option>
+        <option>Web Development</option>
+        <option>App Development</option>
+        <option>Machine Learning</option>
+        <option>AI Prompting</option>
+        <option>Arduino</option>
+        <option>3D Design</option>
+        <option>3D Games</option>
+        <option>Not sure yet</option>
 
+    </select>
 
-                    <select id="subjectInterest"
-                            required>
+    <button type="submit"
+            class="btn btn-primary form-button">
+        Contact SMARTY
+    </button>
 
-
-                        <option value=""
-                                disabled
-                                selected>
-
-                            What are they interested in?
-
-                        </option>
-
-
-                        <option>
-                            Coding & Games
-                        </option>
-
-                        <option>
-                            Web Development
-                        </option>
-
-                        <option>
-                            App Development
-                        </option>
-
-                        <option>
-                            Machine Learning
-                        </option>
-
-                        <option>
-                            AI Prompting
-                        </option>
-
-                        <option>
-                            Arduino
-                        </option>
-
-                        <option>
-                            3D Design
-                        </option>
-
-                        <option>
-                            3D Games
-                        </option>
-
-                        <option>
-                            Not sure yet
-                        </option>
-
-
-                    </select>
-
-
-                    <button type="submit"
-                            class="btn btn-primary form-button">
-
-                        Contact SMARTY
-
-                    </button>
-
-
-                </form>
+</form>
 
             </div>
 
