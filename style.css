@@ -2235,7 +2235,85 @@ footer {
         align-items: flex-start;
     }
 
+/* =================================
+   FOOTER SOCIAL ICONS
+================================= */
 
+.footer-socials {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.footer-socials a {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid var(--line);
+
+    background: var(--card);
+
+    color: var(--teal);
+
+    font-size: 1.05rem;
+
+    transition:
+        transform .15s ease,
+        background .15s ease,
+        color .15s ease,
+        border-color .15s ease;
+}
+
+
+.footer-socials a:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--teal);
+
+    color: #FFFFFF;
+
+    border-color: var(--teal);
+}
+
+
+.footer-right {
+
+    text-align: right;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 760px) {
+
+    .footer-socials {
+
+        width: 100%;
+    }
+
+
+    .footer-right {
+
+        text-align: left;
+    }
+
+}
     /* WHATSAPP */
 
     .wa-float {
