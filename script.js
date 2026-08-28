@@ -36,6 +36,7 @@ For now leave "#".
 */
 
 const smartyCalendarLink = "#";
+const smartyGoogleSheetURL ="https://script.google.com/macros/s/AKfycby_YRolRm3VBFe6YJQtSmSS3SgLpX4qEwv2U0JD5-FqNpvTNJqtHQpcfh9EC5MGSGY04Q/exec";
 
 
 
@@ -216,7 +217,8 @@ if (whatsappButton) {
 
 
 /* ==========================================
-   CONTACT FORM -> WHATSAPP
+   CONTACT FORM
+   GOOGLE SHEET -> WHATSAPP
 ========================================== */
 
 const contactForm =
@@ -227,10 +229,14 @@ if (contactForm) {
 
     contactForm.addEventListener(
         "submit",
-        function (event) {
+        async function (event) {
 
             event.preventDefault();
 
+
+            /* ==============================
+               GET FORM INFORMATION
+            ============================== */
 
             const studentName =
                 document
@@ -280,59 +286,189 @@ if (contactForm) {
 
 
             const fullPhone =
-                countryCode + " " + phone;
+                countryCode +
+                " " +
+                phone;
 
 
-            const message =
 
-                "Hi Learn with Smarty! 👋\n\n" +
+            /* ==============================
+               DATA FOR GOOGLE SHEET
+            ============================== */
 
-                "I would like to request a free demo.\n\n" +
+            const formData = {
 
-                "Learner: " +
-                studentName +
-                "\n" +
+                studentName:
+                    studentName,
 
-                "Age: " +
-                studentAge +
-                "\n" +
+                studentAge:
+                    studentAge,
 
-                (parentName
-                    ? "Parent / Contact: " +
-                      parentName +
-                      "\n"
-                    : "") +
+                parentName:
+                    parentName,
 
-                "Email: " +
-                email +
-                "\n" +
+                email:
+                    email,
 
-                "Phone / WhatsApp: " +
-                fullPhone +
-                "\n" +
+                countryCode:
+                    countryCode,
 
-                "Interested in: " +
-                subjectInterest;
+                phone:
+                    phone,
 
+                subjectInterest:
+                    subjectInterest
 
-            const whatsappURL =
-
-                "https://wa.me/" +
-                smartyWhatsAppNumber +
-                "?text=" +
-                encodeURIComponent(message);
+            };
 
 
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
+
+            /* ==============================
+               SUBMIT BUTTON
+            ============================== */
+
+            const submitButton =
+                contactForm.querySelector(
+                    'button[type="submit"]'
+                );
+
+
+            const originalButtonText =
+                submitButton.textContent;
+
+
+            submitButton.disabled =
+                true;
+
+
+            submitButton.textContent =
+                "Saving...";
+
+
+
+            try {
+
+
+                /* ==============================
+                   SAVE TO GOOGLE SHEET FIRST
+                ============================== */
+
+                await fetch(
+                    smartyGoogleSheetURL,
+                    {
+
+                        method: "POST",
+
+                        mode: "no-cors",
+
+                        headers: {
+
+                            "Content-Type":
+                                "text/plain;charset=utf-8"
+
+                        },
+
+                        body:
+                            JSON.stringify(
+                                formData
+                            )
+
+                    }
+                );
+
+
+
+                /* ==============================
+                   CREATE WHATSAPP MESSAGE
+                ============================== */
+
+                const message =
+
+                    "Hi Learn with Smarty! 👋\n\n" +
+
+                    "I would like to request a free demo.\n\n" +
+
+                    "Learner: " +
+                    studentName +
+                    "\n" +
+
+                    "Age: " +
+                    studentAge +
+                    "\n" +
+
+                    (
+                        parentName
+
+                            ? "Parent / Contact: " +
+                              parentName +
+                              "\n"
+
+                            : ""
+                    ) +
+
+                    "Email: " +
+                    email +
+                    "\n" +
+
+                    "Phone / WhatsApp: " +
+                    fullPhone +
+                    "\n" +
+
+                    "Interested in: " +
+                    subjectInterest;
+
+
+
+                const whatsappURL =
+
+                    "https://wa.me/" +
+
+                    smartyWhatsAppNumber +
+
+                    "?text=" +
+
+                    encodeURIComponent(
+                        message
+                    );
+
+
+
+                /* ==============================
+                   OPEN WHATSAPP
+                ============================== */
+
+                window.location.href =
+                    whatsappURL;
+
+
+
+            } catch (error) {
+
+
+                console.error(
+                    "SMARTY form error:",
+                    error
+                );
+
+
+                alert(
+                    "We couldn't submit your request. Please contact us directly through WhatsApp."
+                );
+
+
+                submitButton.disabled =
+                    false;
+
+
+                submitButton.textContent =
+                    originalButtonText;
+
+            }
 
         }
     );
 
 }
-
 /* ==========================================
    CALENDAR BUTTON
 ========================================== */
