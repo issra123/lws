@@ -231,12 +231,17 @@ if (contactForm) {
             event.preventDefault();
 
 
-            const parentName =
-                document.getElementById("parentName").value.trim();
+        
 
 
-            const childName =
-                document.getElementById("childName").value.trim();
+       const studentName =
+    document.getElementById("studentName").value.trim();
+
+const studentAge =
+    document.getElementById("studentAge").value.trim();
+
+const parentName =
+    document.getElementById("parentName").value.trim();
 
 
             const email =
@@ -251,30 +256,34 @@ if (contactForm) {
                 document.getElementById("subjectInterest").value;
 
 
-            const message =
+           const message =
 
-                "Hi Learn with Smarty! 👋\n\n" +
+    "Hi Learn with Smarty! 👋\n\n" +
 
-                "I would like to request a free demo.\n\n" +
+    "I would like to request a free demo.\n\n" +
 
-                "Parent / Contact: " +
-                parentName +
-                "\n" +
+    "Learner: " +
+    studentName +
+    "\n" +
 
-                "Learner: " +
-                childName +
-                "\n" +
+    "Age: " +
+    studentAge +
+    "\n" +
 
-                "Email: " +
-                email +
-                "\n" +
+    (parentName
+        ? "Parent / Contact: " + parentName + "\n"
+        : "") +
 
-                "Phone / WhatsApp: " +
-                phone +
-                "\n" +
+    "Email: " +
+    email +
+    "\n" +
 
-                "Interested in: " +
-                subjectInterest;
+    "Phone / WhatsApp: " +
+    phone +
+    "\n" +
+
+    "Interested in: " +
+    subjectInterest;
 
 
             const whatsappURL =
