@@ -214,6 +214,7 @@ if (whatsappButton) {
 
 
 
+
 /* ==========================================
    CONTACT FORM -> WHATSAPP
 ========================================== */
@@ -231,59 +232,87 @@ if (contactForm) {
             event.preventDefault();
 
 
-        
+            const studentName =
+                document
+                    .getElementById("studentName")
+                    .value
+                    .trim();
 
 
-       const studentName =
-    document.getElementById("studentName").value.trim();
+            const studentAge =
+                document
+                    .getElementById("studentAge")
+                    .value
+                    .trim();
 
-const studentAge =
-    document.getElementById("studentAge").value.trim();
 
-const parentName =
-    document.getElementById("parentName").value.trim();
+            const parentName =
+                document
+                    .getElementById("parentName")
+                    .value
+                    .trim();
 
 
             const email =
-                document.getElementById("email").value.trim();
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+
+            const countryCode =
+                document
+                    .getElementById("countryCode")
+                    .value;
 
 
             const phone =
-                document.getElementById("phone").value.trim();
+                document
+                    .getElementById("phone")
+                    .value
+                    .trim();
 
 
             const subjectInterest =
-                document.getElementById("subjectInterest").value;
+                document
+                    .getElementById("subjectInterest")
+                    .value;
 
 
-           const message =
+            const fullPhone =
+                countryCode + " " + phone;
 
-    "Hi Learn with Smarty! 👋\n\n" +
 
-    "I would like to request a free demo.\n\n" +
+            const message =
 
-    "Learner: " +
-    studentName +
-    "\n" +
+                "Hi Learn with Smarty! 👋\n\n" +
 
-    "Age: " +
-    studentAge +
-    "\n" +
+                "I would like to request a free demo.\n\n" +
 
-    (parentName
-        ? "Parent / Contact: " + parentName + "\n"
-        : "") +
+                "Learner: " +
+                studentName +
+                "\n" +
 
-    "Email: " +
-    email +
-    "\n" +
+                "Age: " +
+                studentAge +
+                "\n" +
 
-    "Phone / WhatsApp: " +
-    phone +
-    "\n" +
+                (parentName
+                    ? "Parent / Contact: " +
+                      parentName +
+                      "\n"
+                    : "") +
 
-    "Interested in: " +
-    subjectInterest;
+                "Email: " +
+                email +
+                "\n" +
+
+                "Phone / WhatsApp: " +
+                fullPhone +
+                "\n" +
+
+                "Interested in: " +
+                subjectInterest;
 
 
             const whatsappURL =
@@ -303,8 +332,6 @@ const parentName =
     );
 
 }
-
-
 
 /* ==========================================
    CALENDAR BUTTON
