@@ -4,41 +4,12 @@
 ========================================== */
 
 
-/* ==========================================
-   SETTINGS
 
-   THESE ARE THE MAIN THINGS YOU CHANGE.
-========================================== */
-
-
-/*
-YOUR WHATSAPP NUMBER
-
-Use international format.
-
-Example:
-+961 70 123 456
-
-becomes:
-
-96170123456
-
-NO +
-NO spaces
-*/
 
 
 const smartyWhatsAppNumber = "96181941723";
 
 
-/*
-YOUR GOOGLE CALENDAR BOOKING LINK
-
-When you create your Google Calendar
-Appointment Schedule, paste the link here.
-
-For now leave "#".
-*/
 
 
 const smartyCalendarLink = "#";
