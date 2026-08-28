@@ -23,7 +23,7 @@ NO +
 NO spaces
 */
 
-const smartyWhatsAppNumber = "961XXXXXXXX";
+const smartyWhatsAppNumber = "+96181941723";
 
 
 /*
