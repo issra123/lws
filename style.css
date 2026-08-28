@@ -25,57 +25,41 @@
 ================================= */
 
 * {
-
     box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
 }
 
 
 html {
-
     scroll-behavior: smooth;
 }
 
 
 body {
-
     background: var(--bg);
-
     color: var(--text);
-
     font-family: var(--body);
-
     line-height: 1.6;
-
     overflow-x: hidden;
 }
 
 
 a {
-
     color: inherit;
-
     text-decoration: none;
 }
 
 
 img {
-
     max-width: 100%;
-
     display: block;
 }
 
 
 .wrap {
-
     max-width: 1160px;
-
     margin: 0 auto;
-
     padding: 0 24px;
 }
 
@@ -84,37 +68,27 @@ h1,
 h2,
 h3,
 h4 {
-
     font-family: var(--display);
-
     line-height: 1.15;
-
     letter-spacing: -0.01em;
 }
 
 
 section {
-
     padding: 70px 0;
 }
 
 
 .eyebrow {
-
     font-family: var(--mono);
-
     font-size: .75rem;
-
     letter-spacing: .12em;
-
     text-transform: uppercase;
-
     color: var(--teal);
-
     display: inline-block;
-
     margin-bottom: 14px;
 }
+
 
 
 /* =================================
@@ -122,13 +96,9 @@ section {
 ================================= */
 
 .btn {
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 8px;
 
     padding: 14px 28px;
@@ -136,7 +106,6 @@ section {
     border-radius: 999px;
 
     font-weight: 600;
-
     font-size: .95rem;
 
     cursor: pointer;
@@ -145,14 +114,13 @@ section {
 
     transition:
         transform .15s ease,
-        box-shadow .15s ease;
+        box-shadow .15s ease,
+        border-color .15s ease;
 }
 
 
 .btn-primary {
-
     background: var(--teal);
-
     color: #FFFFFF;
 
     box-shadow:
@@ -161,7 +129,6 @@ section {
 
 
 .btn-primary:hover {
-
     transform: translateY(-2px);
 
     box-shadow:
@@ -170,9 +137,7 @@ section {
 
 
 .btn-ghost {
-
     background: transparent;
-
     color: var(--text);
 
     border: 1px solid var(--line);
@@ -180,11 +145,10 @@ section {
 
 
 .btn-ghost:hover {
-
     border-color: var(--teal);
-
     color: var(--teal);
 }
+
 
 
 /* =================================
@@ -192,18 +156,14 @@ section {
 ================================= */
 
 header {
-
     position: sticky;
-
     top: 0;
-
     z-index: 50;
 
     background:
-        rgba(246,248,255,.85);
+        rgba(246,248,255,.88);
 
-    backdrop-filter:
-        blur(10px);
+    backdrop-filter: blur(10px);
 
     border-bottom:
         1px solid var(--line);
@@ -211,11 +171,8 @@ header {
 
 
 nav {
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 16px 24px;
@@ -223,19 +180,17 @@ nav {
     max-width: 1160px;
 
     margin: 0 auto;
+
+    position: relative;
 }
 
 
 .logo {
-
     font-family: var(--display);
-
     font-weight: 700;
-
     font-size: 1.15rem;
 
     display: flex;
-
     align-items: center;
 
     gap: 10px;
@@ -243,17 +198,12 @@ nav {
 
 
 .logo span {
-
     color: var(--teal);
 }
 
 
-/* YOUR REAL LOGO */
-
 .logo-image {
-
     width: 46px;
-
     height: 46px;
 
     object-fit: contain;
@@ -265,9 +215,7 @@ nav {
 
 
 .nav-links {
-
     display: flex;
-
     gap: 28px;
 
     font-size: .92rem;
@@ -276,16 +224,18 @@ nav {
 }
 
 
-.nav-links a:hover {
+.nav-links a {
+    transition: color .15s ease;
+}
 
+
+.nav-links a:hover {
     color: var(--text);
 }
 
 
 .nav-right {
-
     display: flex;
-
     align-items: center;
 
     gap: 16px;
@@ -293,24 +243,11 @@ nav {
 
 
 .nav-cta {
-
     display: none;
 }
 
 
-@media(min-width: 860px) {
-
-    .nav-cta {
-
-        display: inline-flex;
-
-    }
-
-}
-
-
 .menu-btn {
-
     display: block;
 
     background: none;
@@ -327,10 +264,13 @@ nav {
 
 @media(min-width: 860px) {
 
+    .nav-cta {
+        display: inline-flex;
+    }
+
+
     .menu-btn {
-
         display: none;
-
     }
 
 }
@@ -339,12 +279,11 @@ nav {
 @media(max-width: 859px) {
 
     .nav-links {
-
         display: none;
-
     }
 
 }
+
 
 
 /* =================================
@@ -352,7 +291,6 @@ nav {
 ================================= */
 
 .hero {
-
     padding: 90px 0 60px;
 
     position: relative;
@@ -360,7 +298,6 @@ nav {
 
 
 .hero-grid {
-
     display: grid;
 
     gap: 32px;
@@ -369,61 +306,12 @@ nav {
 }
 
 
-@media(min-width: 900px) {
-
-    .hero-grid {
-
-        grid-template-columns:
-            1.1fr .9fr;
-
-    }
-
-}
-
-
-.hero-visual {
-
-    display: flex;
-
-    justify-content: center;
-}
-
-
-.hero-right {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 28px;
-
-    align-items: stretch;
-}
-
-
-.hero-illustration {
-
-    width: 100%;
-
-    max-width: 380px;
-
-    height: auto;
-}
-
-
-@media(max-width: 899px) {
-
-    .hero-illustration {
-
-        max-width: 280px;
-
-    }
-
+.hero-content {
+    min-width: 0;
 }
 
 
 .hero h1 {
-
     font-size:
         clamp(2.2rem, 5vw, 3.4rem);
 
@@ -432,15 +320,12 @@ nav {
 
 
 .hero h1 em {
-
     font-style: normal;
-
     color: var(--teal);
 }
 
 
 .hero p.lead {
-
     font-size: 1.1rem;
 
     color: var(--text-dim);
@@ -452,9 +337,7 @@ nav {
 
 
 .hero-actions {
-
     display: flex;
-
     flex-wrap: wrap;
 
     gap: 14px;
@@ -464,13 +347,58 @@ nav {
 
 
 .hero-note {
-
     font-family: var(--mono);
-
     font-size: .8rem;
 
     color: var(--text-dim);
 }
+
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+
+    gap: 28px;
+
+    align-items: stretch;
+}
+
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+
+.hero-illustration {
+    width: 100%;
+    max-width: 380px;
+
+    height: auto;
+}
+
+
+/* hide mobile illustration on desktop */
+
+.mobile-hero-visual {
+    display: none;
+}
+
+
+.desktop-hero-visual {
+    display: flex;
+}
+
+
+@media(min-width: 900px) {
+
+    .hero-grid {
+        grid-template-columns:
+            1.1fr .9fr;
+    }
+
+}
+
 
 
 /* =================================
@@ -478,7 +406,6 @@ nav {
 ================================= */
 
 .path-card {
-
     background: var(--card);
 
     border:
@@ -491,15 +418,17 @@ nav {
     position: relative;
 
     overflow: hidden;
+
+    box-shadow:
+        0 5px 20px
+        rgba(16,27,77,.04);
 }
 
 
 .path-card::before {
-
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
@@ -514,7 +443,6 @@ nav {
 
 
 .path-title {
-
     font-family: var(--mono);
 
     font-size: .75rem;
@@ -530,7 +458,6 @@ nav {
 
 
 .path-track {
-
     position: relative;
 
     padding: 0 6px;
@@ -538,13 +465,10 @@ nav {
 
 
 .path-line {
-
     position: absolute;
 
     top: 19px;
-
     left: 24px;
-
     right: 24px;
 
     height: 3px;
@@ -556,11 +480,9 @@ nav {
 
 
 .path-line-fill {
-
     position: absolute;
 
     top: 19px;
-
     left: 24px;
 
     height: 3px;
@@ -583,9 +505,7 @@ nav {
 
 
 .path-nodes {
-
     display: flex;
-
     justify-content: space-between;
 
     position: relative;
@@ -593,11 +513,8 @@ nav {
 
 
 .node {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 
     gap: 10px;
@@ -607,9 +524,7 @@ nav {
 
 
 .dot {
-
     width: 40px;
-
     height: 40px;
 
     border-radius: 50%;
@@ -620,15 +535,12 @@ nav {
         3px solid var(--line);
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     font-family: var(--mono);
 
     font-size: .85rem;
-
     font-weight: 600;
 
     z-index: 2;
@@ -636,7 +548,6 @@ nav {
 
 
 .node.active .dot {
-
     border-color: var(--teal);
 
     color: var(--teal);
@@ -648,17 +559,14 @@ nav {
 
 
 .node-label {
-
     font-family: var(--display);
 
     font-weight: 600;
-
     font-size: .9rem;
 }
 
 
 .node-sub {
-
     font-size: .75rem;
 
     color: var(--text-dim);
@@ -667,12 +575,12 @@ nav {
 }
 
 
+
 /* =================================
    SECTION HEAD
 ================================= */
 
 .section-head {
-
     max-width: 640px;
 
     margin-bottom: 44px;
@@ -680,14 +588,12 @@ nav {
 
 
 .section-head h2 {
-
     font-size:
         clamp(1.6rem,3.4vw,2.3rem);
 }
 
 
 .section-head p {
-
     color: var(--text-dim);
 
     margin-top: 12px;
@@ -696,12 +602,12 @@ nav {
 }
 
 
+
 /* =================================
    MISSION
 ================================= */
 
 .mission-grid {
-
     display: grid;
 
     gap: 40px;
@@ -710,22 +616,13 @@ nav {
 }
 
 
-@media(min-width: 860px) {
-
-    .mission-grid {
-
-        grid-template-columns:
-            .8fr 1.2fr;
-
-    }
-
+.mission-content {
+    min-width: 0;
 }
 
 
 .mission-illustration {
-
     width: 100%;
-
     max-width: 320px;
 
     height: auto;
@@ -739,7 +636,6 @@ nav {
 
 
 .mv-grid {
-
     display: grid;
 
     gap: 18px;
@@ -755,7 +651,6 @@ nav {
 
 
 .mv-card {
-
     background: var(--card);
 
     border:
@@ -772,7 +667,6 @@ nav {
 
 
 .mv-card h3 {
-
     font-family: var(--display);
 
     font-size: 1.1rem;
@@ -784,11 +678,21 @@ nav {
 
 
 .mv-card p {
-
     color: var(--text-dim);
 
     font-size: .95rem;
 }
+
+
+@media(min-width: 860px) {
+
+    .mission-grid {
+        grid-template-columns:
+            .8fr 1.2fr;
+    }
+
+}
+
 
 
 /* =================================
@@ -796,7 +700,6 @@ nav {
 ================================= */
 
 .grid-4 {
-
     display: grid;
 
     gap: 20px;
@@ -810,7 +713,6 @@ nav {
 
 
 .why-card {
-
     background: var(--card);
 
     border:
@@ -823,11 +725,23 @@ nav {
     box-shadow:
         0 4px 18px
         rgba(16,27,77,.05);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.why-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 28px
+        rgba(16,27,77,.08);
 }
 
 
 .why-card .ico {
-
     font-size: 1.6rem;
 
     margin-bottom: 14px;
@@ -835,7 +749,6 @@ nav {
 
 
 .why-card h3 {
-
     font-size: 1.05rem;
 
     margin-bottom: 8px;
@@ -843,11 +756,97 @@ nav {
 
 
 .why-card p {
-
     color: var(--text-dim);
 
     font-size: .92rem;
 }
+
+
+
+/* =================================
+   SOCIAL PROOF
+================================= */
+
+#results {
+    background:
+        rgba(255,255,255,.35);
+}
+
+
+.proof-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.proof-card {
+    background: var(--card);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 18px
+        rgba(16,27,77,.05);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.proof-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 28px
+        rgba(16,27,77,.08);
+}
+
+
+.proof-icon {
+    width: 58px;
+    height: 58px;
+
+    margin:
+        0 auto 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        rgba(52,82,217,.08);
+
+    font-size: 1.7rem;
+}
+
+
+.proof-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 1.05rem;
+}
+
+
+.proof-card p {
+    color: var(--text-dim);
+
+    font-size: .9rem;
+}
+
 
 
 /* =================================
@@ -855,7 +854,6 @@ nav {
 ================================= */
 
 .prog-grid {
-
     display: grid;
 
     gap: 18px;
@@ -869,7 +867,6 @@ nav {
 
 
 .prog-card {
-
     background: #FBFCFF;
 
     border:
@@ -884,25 +881,35 @@ nav {
     box-shadow:
         0 4px 18px
         rgba(16,27,77,.05);
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease;
+}
+
+
+.prog-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(52,82,217,.35);
 }
 
 
 .prog-card h3 {
-
     font-size: 1.05rem;
 
     margin-bottom: 8px;
 
     display: flex;
-
     align-items: center;
+    flex-wrap: wrap;
 
     gap: 8px;
 }
 
 
 .prog-card p {
-
     color: var(--text-dim);
 
     font-size: .9rem;
@@ -910,7 +917,6 @@ nav {
 
 
 .tag-soon {
-
     font-family: var(--mono);
 
     font-size: .68rem;
@@ -930,12 +936,22 @@ nav {
 }
 
 
+/* hidden on desktop */
+
+.programs-toggle {
+    display: none;
+
+    margin:
+        24px auto 0;
+}
+
+
+
 /* =================================
    LEVELS / PRICING
 ================================= */
 
 .level-grid {
-
     display: grid;
 
     gap: 20px;
@@ -949,7 +965,6 @@ nav {
 
 
 .level-card {
-
     background: var(--card);
 
     border:
@@ -966,13 +981,11 @@ nav {
 
 
 .featured-level {
-
     border-color: var(--teal);
 }
 
 
 .level-card h3 {
-
     font-size: 1.3rem;
 
     margin-bottom: 6px;
@@ -980,19 +993,18 @@ nav {
 
 
 .level-card .price {
-
     font-family: var(--display);
 
     font-size: 1.5rem;
 
     color: var(--teal);
 
-    margin: 14px 0 2px;
+    margin:
+        14px 0 2px;
 }
 
 
 .level-card .price span {
-
     font-size: .82rem;
 
     color: var(--text-dim);
@@ -1002,7 +1014,6 @@ nav {
 
 
 .level-card .price-group {
-
     font-family: var(--display);
 
     font-size: 1.05rem;
@@ -1014,7 +1025,6 @@ nav {
 
 
 .level-card .price-group span {
-
     font-size: .78rem;
 
     color: var(--text-dim);
@@ -1024,7 +1034,6 @@ nav {
 
 
 .level-description {
-
     color: var(--text-dim);
 
     font-size: .9rem;
@@ -1032,7 +1041,6 @@ nav {
 
 
 .level-card ul {
-
     list-style: none;
 
     margin-top: 16px;
@@ -1040,7 +1048,6 @@ nav {
 
 
 .level-card li {
-
     font-size: .88rem;
 
     color: var(--text-dim);
@@ -1053,13 +1060,11 @@ nav {
 
 
 .level-card li:first-child {
-
     border-top: none;
 }
 
 
 .price-note {
-
     font-size: .85rem;
 
     color: var(--text-dim);
@@ -1070,20 +1075,12 @@ nav {
 }
 
 
-/* =================================
-   HOW IT WORKS
-================================= */
-
-/* ==========================================
-   STEPS
-========================================== */
 
 /* =================================
    HOW IT WORKS - STEPS
 ================================= */
 
 .steps {
-
     display: grid;
 
     grid-template-columns:
@@ -1096,7 +1093,6 @@ nav {
 
 
 .step {
-
     position: relative;
 
     padding:
@@ -1122,7 +1118,6 @@ nav {
 
 
 .step:hover {
-
     transform: translateY(-4px);
 
     border-color:
@@ -1135,7 +1130,6 @@ nav {
 
 
 .step::before {
-
     counter-increment: smarty-step;
 
     content:
@@ -1144,7 +1138,6 @@ nav {
     position: absolute;
 
     left: 20px;
-
     top: 17px;
 
     color: var(--teal);
@@ -1160,7 +1153,6 @@ nav {
 
 
 .step h3 {
-
     margin-bottom: 8px;
 
     font-size: 1rem;
@@ -1170,45 +1162,18 @@ nav {
 
 
 .step p {
-
     color: var(--text-dim);
 
     font-size: .88rem;
 }
 
 
-/* TABLET */
-
-@media(max-width: 900px) {
-
-    .steps {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-}
-
-
-/* MOBILE */
-
-@media(max-width: 560px) {
-
-    .steps {
-
-        grid-template-columns: 1fr;
-
-    }
-
-}
 
 /* =================================
    LAPTOP CALLOUT
 ================================= */
 
 .callout {
-
     background:
         linear-gradient(
             135deg,
@@ -1224,7 +1189,6 @@ nav {
     padding: 22px 26px;
 
     display: flex;
-
     align-items: center;
 
     gap: 16px;
@@ -1234,13 +1198,11 @@ nav {
 
 
 .callout .ico {
-
     font-size: 1.6rem;
 }
 
 
 .callout p {
-
     font-size: .92rem;
 
     color: var(--text-dim);
@@ -1248,9 +1210,9 @@ nav {
 
 
 .callout strong {
-
     color: var(--text);
 }
+
 
 
 /* =================================
@@ -1258,7 +1220,6 @@ nav {
 ================================= */
 
 .workshop-banner {
-
     background: #FBFCFF;
 
     border:
@@ -1278,22 +1239,7 @@ nav {
 }
 
 
-@media(min-width:760px) {
-
-    .workshop-banner {
-
-        grid-template-columns:
-            1fr auto;
-
-        align-items: center;
-
-    }
-
-}
-
-
 .workshop-banner h2 {
-
     font-size: 1.5rem;
 
     margin-bottom: 8px;
@@ -1301,11 +1247,23 @@ nav {
 
 
 .workshop-banner p {
-
     color: var(--text-dim);
 
     font-size: .95rem;
 }
+
+
+@media(min-width:760px) {
+
+    .workshop-banner {
+        grid-template-columns:
+            1fr auto;
+
+        align-items: center;
+    }
+
+}
+
 
 
 /* =================================
@@ -1313,7 +1271,6 @@ nav {
 ================================= */
 
 .faq-item {
-
     border-bottom:
         1px solid var(--line);
 
@@ -1322,7 +1279,6 @@ nav {
 
 
 .faq-item summary {
-
     cursor: pointer;
 
     font-weight: 600;
@@ -1334,19 +1290,18 @@ nav {
     display: flex;
 
     justify-content: space-between;
-
     align-items: center;
+
+    gap: 20px;
 }
 
 
 .faq-item summary::-webkit-details-marker {
-
     display: none;
 }
 
 
 .faq-item summary::after {
-
     content: "+";
 
     font-family: var(--mono);
@@ -1354,17 +1309,17 @@ nav {
     color: var(--teal);
 
     font-size: 1.2rem;
+
+    flex-shrink: 0;
 }
 
 
 .faq-item[open] summary::after {
-
     content: "–";
 }
 
 
 .faq-item p {
-
     color: var(--text-dim);
 
     margin-top: 12px;
@@ -1373,12 +1328,12 @@ nav {
 }
 
 
+
 /* =================================
    FINAL CTA / BOOKING
 ================================= */
 
 .final-cta {
-
     text-align: center;
 
     background:
@@ -1397,7 +1352,6 @@ nav {
 
 
 .final-cta h2 {
-
     font-size:
         clamp(1.8rem,4vw,2.6rem);
 
@@ -1406,7 +1360,6 @@ nav {
 
 
 .final-cta > .wrap > p {
-
     color: var(--text-dim);
 
     margin-bottom: 28px;
@@ -1414,7 +1367,6 @@ nav {
 
 
 .book-grid {
-
     display: grid;
 
     gap: 20px;
@@ -1432,7 +1384,6 @@ nav {
 
 
 .book-card {
-
     background: var(--card);
 
     border:
@@ -1449,17 +1400,16 @@ nav {
 
 
 .book-card h3 {
-
     font-family: var(--display);
 
     font-size: 1.15rem;
 
-    margin: 6px 0 8px;
+    margin:
+        6px 0 8px;
 }
 
 
 .book-sub {
-
     color: var(--text-dim);
 
     font-size: .88rem;
@@ -1468,12 +1418,13 @@ nav {
 }
 
 
-/* FORM */
+
+/* =================================
+   FORM
+================================= */
 
 .book-form {
-
     display: flex;
-
     flex-direction: column;
 
     gap: 12px;
@@ -1482,7 +1433,6 @@ nav {
 
 .book-form input,
 .book-form select {
-
     width: 100%;
 
     padding: 12px 14px;
@@ -1503,14 +1453,12 @@ nav {
 
 
 .book-form input::placeholder {
-
     color: var(--text-dim);
 }
 
 
 .book-form input:focus,
 .book-form select:focus {
-
     outline:
         2px solid var(--teal);
 
@@ -1519,25 +1467,23 @@ nav {
 
 
 .form-button {
-
     width: 100%;
 }
 
 
-/* SCHEDULE CARD */
+
+/* =================================
+   SCHEDULE CARD
+================================= */
 
 .schedule-card {
-
     display: flex;
-
     flex-direction: column;
 }
 
 
 .calendar-visual {
-
     width: 80px;
-
     height: 80px;
 
     margin:
@@ -1546,9 +1492,7 @@ nav {
     border-radius: 50%;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     background:
@@ -1559,7 +1503,6 @@ nav {
 
 
 .schedule-card h4 {
-
     text-align: center;
 
     font-size: 1.05rem;
@@ -1569,7 +1512,6 @@ nav {
 
 
 .schedule-description {
-
     color: var(--text-dim);
 
     text-align: center;
@@ -1581,7 +1523,6 @@ nav {
 
 
 .calendar-note {
-
     color: var(--text-dim);
 
     font-size: .82rem;
@@ -1592,22 +1533,118 @@ nav {
 }
 
 
+
+/* =================================
+   DIRECT CONTACT INFORMATION
+================================= */
+
+.contact-info-section {
+    padding:
+        45px 0;
+}
+
+
+.contact-info-card {
+    background: var(--card);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(16,27,77,.05);
+}
+
+
+.contact-info-card h2 {
+    font-size: 1.4rem;
+}
+
+
+.contact-methods {
+    display: flex;
+
+    gap: 18px;
+}
+
+
+.contact-method {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 13px 16px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 12px;
+
+    background: var(--bg);
+
+    transition:
+        border-color .15s ease,
+        transform .15s ease;
+}
+
+
+.contact-method:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--teal);
+}
+
+
+.contact-method span {
+    font-size: 1.35rem;
+
+    flex-shrink: 0;
+}
+
+
+.contact-method small {
+    display: block;
+
+    color: var(--text-dim);
+
+    font-size: .7rem;
+}
+
+
+.contact-method strong {
+    font-size: .85rem;
+
+    word-break: break-word;
+}
+
+
+
 /* =================================
    WHATSAPP
 ================================= */
 
 .wa-float {
-
     position: fixed;
 
     bottom: 22px;
-
     right: 22px;
 
     z-index: 60;
 
     width: 58px;
-
     height: 58px;
 
     border-radius: 50%;
@@ -1615,9 +1652,7 @@ nav {
     background: #25D366;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     box-shadow:
@@ -1630,9 +1665,9 @@ nav {
 
 
 .wa-float:hover {
-
     transform: scale(1.08);
 }
+
 
 
 /* =================================
@@ -1640,19 +1675,16 @@ nav {
 ================================= */
 
 footer {
-
     padding: 40px 0;
 }
 
 
 .foot-grid {
-
     display: flex;
 
     flex-wrap: wrap;
 
     justify-content: space-between;
-
     align-items: center;
 
     gap: 20px;
@@ -1664,7 +1696,6 @@ footer {
 
 
 .footer-logo {
-
     display: flex;
 
     align-items: center;
@@ -1674,9 +1705,7 @@ footer {
 
 
 .footer-logo img {
-
     width: 42px;
-
     height: 42px;
 
     object-fit: contain;
@@ -1686,42 +1715,535 @@ footer {
 
 
 .footer-logo strong {
-
     color: var(--text);
 }
+
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media(max-width: 900px) {
+
+    .steps {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .proof-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+
+/* =================================
+   MOBILE HERO + MISSION
+================================= */
+
+@media(max-width: 899px) {
+
+    /* HERO */
+
+    .hero {
+        padding:
+            62px 0 45px;
+    }
+
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+
+    .hero-content {
+        text-align: center;
+    }
+
+
+    .hero h1 {
+        margin-bottom: 0;
+    }
+
+
+    /*
+       On mobile:
+       title -> image -> description -> buttons
+    */
+
+    .desktop-hero-visual {
+        display: none;
+    }
+
+
+    .mobile-hero-visual {
+        display: flex;
+
+        justify-content: center;
+
+        margin:
+            18px 0 12px;
+    }
+
+
+    .mobile-hero-visual .hero-illustration {
+        max-width: 270px;
+    }
+
+
+    .hero p.lead {
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-bottom: 26px;
+    }
+
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+
+    .hero-note {
+        text-align: center;
+    }
+
+
+    /*
+       path stays underneath
+       the main mobile hero
+    */
+
+    .hero-right {
+        gap: 0;
+    }
+
+
+    .path-card {
+        margin-top: 4px;
+    }
+
+
+    /* MISSION */
+
+    .mission-grid {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 28px;
+    }
+
+
+    .mission-content {
+        order: 1;
+
+        width: 100%;
+    }
+
+
+    .mission-illustration {
+        order: 2;
+
+        max-width: 215px;
+
+        margin-top: 3px;
+    }
+
+}
+
 
 
 /* =================================
    MOBILE
 ================================= */
 
+@media(max-width: 760px) {
+
+    .proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .contact-info-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .contact-methods {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+
+    .contact-method {
+        width: 100%;
+    }
+
+}
+
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
 @media(max-width: 640px) {
 
-    .hero {
-
-        padding: 60px 0 40px;
-
-    }
-
-
     section {
-
-        padding: 50px 0;
-
+        padding:
+            52px 0;
     }
 
 
-    .book-card {
+    .wrap {
+        padding:
+            0 18px;
+    }
 
+
+    /* NAV */
+
+    nav {
+        padding:
+            12px 18px;
+    }
+
+
+    .logo {
+        font-size: 1rem;
+    }
+
+
+    .logo-image {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding:
+            48px 0 40px;
+    }
+
+
+    .hero .eyebrow {
+        font-size: .68rem;
+
+        margin-bottom: 12px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            clamp(2rem, 10.5vw, 2.75rem);
+
+        line-height: 1.08;
+    }
+
+
+    .mobile-hero-visual {
+        margin:
+            10px 0 8px;
+    }
+
+
+    .mobile-hero-visual .hero-illustration {
+        max-width: 235px;
+    }
+
+
+    .hero p.lead {
+        font-size: .97rem;
+
+        line-height: 1.65;
+
+        margin-bottom: 23px;
+    }
+
+
+    .hero-actions {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+    }
+
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+
+    .hero-note {
+        font-size: .72rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* PATH */
+
+    .path-card {
+        padding:
+            26px 15px;
+    }
+
+
+    .path-title {
+        margin-bottom: 20px;
+    }
+
+
+    .node-label {
+        font-size: .82rem;
+    }
+
+
+    .node-sub {
+        font-size: .66rem;
+    }
+
+
+    .dot {
+        width: 36px;
+        height: 36px;
+
+        font-size: .76rem;
+    }
+
+
+    .path-line,
+    .path-line-fill {
+        top: 17px;
+    }
+
+
+    /* SECTION HEAD */
+
+    .section-head {
+        margin-bottom: 30px;
+    }
+
+
+    .section-head h2 {
+        font-size: 1.7rem;
+    }
+
+
+    .section-head p {
+        font-size: .93rem;
+    }
+
+
+    /* MISSION */
+
+    .mission-illustration {
+        max-width: 185px;
+    }
+
+
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* WHY */
+
+    .grid-4 {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .why-card {
+        padding: 22px;
+    }
+
+
+    /* SOCIAL PROOF */
+
+    .proof-card {
         padding: 23px;
+    }
 
+
+    /* PROGRAMS */
+
+    .prog-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .prog-card {
+        padding: 21px;
+    }
+
+
+    /*
+       Only first 6 programs
+       initially appear on mobile
+    */
+
+    .prog-card:nth-child(n+7) {
+        display: none;
+    }
+
+
+    /*
+       JS adds .show-all
+       when the button is clicked
+    */
+
+    .prog-grid.show-all .prog-card {
+        display: block;
+    }
+
+
+    .programs-toggle {
+        display: flex;
+
+        width: 100%;
+
+        margin:
+            22px auto 0;
+    }
+
+
+    /* PRICING */
+
+    .level-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .level-card {
+        padding: 25px;
+    }
+
+
+    .price-note {
+        font-size: .74rem;
     }
 
 
     .callout {
-
         align-items: flex-start;
 
+        padding: 19px;
+    }
+
+
+    /* STEPS */
+
+    .steps {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .step {
+        padding:
+            50px 20px
+            20px;
+    }
+
+
+    /* WORKSHOP */
+
+    .workshop-banner {
+        padding: 25px;
+    }
+
+
+    .workshop-banner .btn {
+        width: 100%;
+    }
+
+
+    /* FAQ */
+
+    .faq-item summary {
+        font-size: .93rem;
+    }
+
+
+    /* BOOKING */
+
+    .book-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .book-card {
+        padding: 23px;
+    }
+
+
+    .final-cta h2 {
+        font-size: 1.9rem;
+    }
+
+
+    /* CONTACT DETAILS */
+
+    .contact-info-section {
+        padding:
+            35px 0;
+    }
+
+
+    .contact-info-card {
+        padding: 22px;
+    }
+
+
+    .contact-info-card h2 {
+        font-size: 1.25rem;
+    }
+
+
+    .contact-method {
+        padding:
+            12px 13px;
+    }
+
+
+    /* FOOTER */
+
+    .foot-grid {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    /* WHATSAPP */
+
+    .wa-float {
+        width: 54px;
+        height: 54px;
+
+        right: 16px;
+        bottom: 16px;
     }
 
 }
