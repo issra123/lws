@@ -583,7 +583,44 @@ window.addEventListener(
 
     }
 );
+/* ==========================================
+   WORKSHOPS -> WHATSAPP
+========================================== */
 
+const workshopWhatsApp =
+    document.getElementById("workshopWhatsApp");
+
+
+if (workshopWhatsApp) {
+
+    workshopWhatsApp.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+
+            const message =
+                "Hi Learn with Smarty! 👋\n\n" +
+                "I'd like to know if there are any workshops coming soon.";
+
+
+            const whatsappURL =
+                "https://wa.me/" +
+                smartyWhatsAppNumber +
+                "?text=" +
+                encodeURIComponent(message);
+
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }
+    );
+
+}
 
 
 /* ==========================================
