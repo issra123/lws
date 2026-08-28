@@ -28,7 +28,7 @@ NO spaces
 */
 
 
-const smartyWhatsAppNumber = "961XXXXXXXX";
+const smartyWhatsAppNumber = "96181941723";
 
 
 /*
@@ -331,7 +331,7 @@ if (contactForm) {
 
 
 
-            const email =
+            const email ="smartycoders.team@gmail.com"
 
                 document.getElementById(
                     "email"
